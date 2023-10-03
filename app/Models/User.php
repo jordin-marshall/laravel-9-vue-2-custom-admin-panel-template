@@ -10,9 +10,12 @@ use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasFactory, Notifiable, HasApiTokens;
+    use HasApiTokens;
+    use HasFactory;
+    use Notifiable;
 
     protected $appends = ['must_verify_email'];
+
     /**
      * The attributes that are mass assignable.
      *

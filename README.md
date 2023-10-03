@@ -7,6 +7,52 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+<!-- GETTING STARTED -->
+## Getting Started
+
+### Prerequisites
+
+<ul>
+    <li>Your machine needs to be ready for the latest Laravel and Node.js.</li>
+</ul>
+
+## Installation
+
+   ```sh
+    # Make sure docker-desktop is installed and running
+
+    # Copy env file and add your own database and mail credentials
+    cp .env.example .env
+
+    # Install dependency
+    composer install
+
+    # Create Sail Command Alias
+    alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+
+    # Generate app key
+    php artisan key:generate
+    
+    # Migrate database
+    php artisan migrate
+
+    # Create encryption keys
+    php artisan passport:install
+
+    # Install dependency with NPM
+    npm install
+
+    # Develop
+    npm run dev # or npm run watch
+
+    # Build on production
+    npm run production
+
+    # Serving application
+    sail up
+
+    ### After Starting sail, replace `php artisan` commands with `sail artisan`
+   ```
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

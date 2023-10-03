@@ -1,9 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Api;
 use Illuminate\Support\Facades\Route;
-use App\Http\Middleware\Authenticate;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,4 +24,3 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/{any?}', function () {
     return view('welcome');
 })->where('any', '.*');
-

@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\RegisterRequest;
+use App\Models\User;
 use Illuminate\Auth\Events\Registered;
-
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
     public function register(RegisterRequest $request)
     {
-        \Log::info('hit controller');
-        // try {
+        try {
             $user = User::create([
                 'first_name' => $request->input('first_name'),
                 'last_name' => $request->input('last_name'),
@@ -27,10 +25,10 @@ class RegisterController extends Controller
             }
 
             return response()->json($user);
-        // } catch (\Exception $e) {
-        //     return response([
-        //         'message' => 'Internal error, please try again later.' //$e->getMessage()
-        //     ], 400);
-        // }
+        } catch (\Exception $e) {
+            return response([
+                'message' => 'Internal error, please try again later.', //$e->getMessage()
+            ], 400);
+        }
     }
 }

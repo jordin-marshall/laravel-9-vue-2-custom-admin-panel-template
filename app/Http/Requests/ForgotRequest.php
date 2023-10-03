@@ -25,7 +25,7 @@ class ForgotRequest extends FormRequest
     {
         return [
             'email' => 'required|email',
-            
+
         ];
     }
 }
